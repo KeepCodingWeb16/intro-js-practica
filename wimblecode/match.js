@@ -45,7 +45,7 @@ export const createMatch = (player1Name, player2Name) => {
     rounds[currentPlayer] = rounds[currentPlayer] + 1;
     const roundDifference = Math.abs(rounds[0] - rounds[1]);
     const maxRounds = rounds[0] === MAX_ROUNDS || rounds[1] === MAX_ROUNDS;
-    if (maxRounds || roundDifference === 2 && (rounds[0] >= ROUNDS || rounds[1] >= ROUNDS)) {
+    if (maxRounds || roundDifference >= 2 && (rounds[0] >= ROUNDS || rounds[1] >= ROUNDS)) {
       return winsGame(player);
     }
   };
