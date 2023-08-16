@@ -2,6 +2,7 @@ export const createMatch = (player1Name, player2Name) => {
   if (!player1Name || !player2Name) throw new Error('Add player names');
 
   const ROUNDS = 4;
+  const MAX_ROUNDS = 7;
 
   let game = [
     { name: player1Name, score: 0 },
@@ -42,7 +43,9 @@ export const createMatch = (player1Name, player2Name) => {
     advantage = '';
     deuce = false;
     rounds[currentPlayer] = rounds[currentPlayer] + 1;
-    if (Math.abs(rounds[0] - rounds[1]) >= 2 && rounds[0] >= ROUNDS || rounds[1] >= ROUNDS) {
+    const roundDifference = Math.abs(rounds[0] - rounds[1]);
+    const maxRounds = rounds[0] === MAX_ROUNDS || rounds[1] === MAX_ROUNDS;
+    if (maxRounds || roundDifference === 2 && (rounds[0] >= ROUNDS || rounds[1] >= ROUNDS)) {
       return winsGame(player);
     }
   };
@@ -94,86 +97,3 @@ export const createMatch = (player1Name, player2Name) => {
     getWinner,
   };
 };
-
-// // Ejemplo de software
-// const game = createMatch('Alberto C', 'David J');
-// // Cuando marca el 1º judagor lo registro de este modo
-// game.pointWonBy(1); // Player 1 scores a point
-// // Cuando marca el 2º judagor lo registro de este modo
-// game.pointWonBy(2); // Player 1 scores a point
-// // Quiero poder ver como va la ronda actual en todo momento
-// console.log(game.getCurrentRoundScore()); // Output: Alberto C 15-15 David J
-// game.pointWonBy(1); // Player 1 scores a point
-// console.log(game.getCurrentRoundScore()); // Output: Alberto C 30-15 David J
-// game.pointWonBy(2); // Player 2 scores a point
-// console.log(game.getCurrentRoundScore()); // Output: Alberto C 30-30 David J
-// game.pointWonBy(1); // Player 1 scores a point
-// console.log(game.getCurrentRoundScore()); // Output: Alberto C 40-30 David J
-// game.pointWonBy(2); // Deuce
-// console.log(game.getCurrentRoundScore()); // Output: Deuce
-// game.pointWonBy(1); // Player 1 wins the game
-// console.log(game.getCurrentRoundScore()); // Output: "Advantage Alberto C"
-// game.pointWonBy(2); // Player 2 wins the game
-// console.log(game.getCurrentRoundScore()); // Output: "Deuce"
-// game.pointWonBy(2); // Player 2 wins the game
-// console.log(game.getCurrentRoundScore()); // Output: "Advantage David J"
-// game.pointWonBy(2); // Player  2 wins the game
-// // Quiero poder ver como va la puntuación de un juego
-// console.log(game.getGameScore()); //  Output: "Alberto C 0\nDavid J 1"
-// // El primer round es para David le quedan 3 para ganar un juego
-
-// game.pointWonBy(2); // Player  2 wins the game
-// game.pointWonBy(2); // Player  2 wins the game
-// game.pointWonBy(2); // Player  2 wins the game
-// game.pointWonBy(2); // Player  2 wins the game
-// // David gana 2º ronda
-
-// game.pointWonBy(2); // Player  2 wins the game
-// game.pointWonBy(2); // Player  2 wins the game
-// game.pointWonBy(2); // Player  2 wins the game
-// game.pointWonBy(2); // Player  2 wins the game
-// // David gana 3º ronda
-
-// game.pointWonBy(2); // Player  2 wins the game
-// game.pointWonBy(2); // Player  2 wins the game
-// game.pointWonBy(2); // Player  2 wins the game
-// game.pointWonBy(2); // Player  2 wins the game
-// // David gana 4º ronda
-
-// // Primer juego ganado
-// console.log(game.getGameScore()); //  Output: "Alberto C 0\nDavid J 1"
-
-// console.log(game.getMatchScore()); //  Output: "Alberto C 0\nDavid J 1"
-// console.log(game.getWinner()); // Output: ''
-
-// game.pointWonBy(2); // Player  2 wins the game
-// game.pointWonBy(2); // Player  2 wins the game
-// game.pointWonBy(2); // Player  2 wins the game
-// game.pointWonBy(2); // Player  2 wins the game
-// // gana ronda 1º
-// game.pointWonBy(2); // Player  2 wins the game
-// game.pointWonBy(2); // Player  2 wins the game
-// game.pointWonBy(2); // Player  2 wins the game
-// game.pointWonBy(2); // Player  2 wins the game
-// // gana ronda 2º
-// game.pointWonBy(2); // Player  2 wins the game
-// game.pointWonBy(2); // Player  2 wins the game
-// game.pointWonBy(2); // Player  2 wins the game
-// game.pointWonBy(2); // Player  2 wins the game
-// // gana ronda 3º
-// game.pointWonBy(2); // Player  2 wins the game
-// game.pointWonBy(2); // Player  2 wins the game
-// game.pointWonBy(2); // Player  2 wins the game
-// game.pointWonBy(2); // Player  2 wins the game
-// // gana ronda 4º
-
-// // Método para ver los juegos de cada jugador
-// console.log(game.getMatchScore()); //  Output: "Alberto C 0\nDavid J 2"
-// console.log(game.getWinner()); // Output: "David J"
-/*
-En la implementación original, se utilizan asignaciones directas y mutaciones de los datos dentro de las variables game, rounds, advantage y deuce. Sin embargo, debido a la naturaleza de cómo se utilizan estos datos en el contexto del problema, no hay riesgo de modificaciones inadvertidas.
-
-Sin embargo, es una buena práctica seguir los principios de la programación funcional y tratar los datos de manera inmutable siempre que sea posible. De esta manera, se evitan posibles efectos secundarios y se mejora la legibilidad y la comprensión del código. La versión revisada que utiliza clonación de objetos y arrays inmutables es más segura y consistente en términos de programación funcional.
-
-En resumen, aunque en este problema en particular no hay riesgo de modificaciones inadvertidas en los datos originales, es recomendable utilizar técnicas de inmutabilidad para mantener buenas prácticas y facilitar el mantenimiento y la comprensión del código.
-*/
