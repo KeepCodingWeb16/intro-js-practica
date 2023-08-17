@@ -20,6 +20,12 @@ El ejercicio 4, consiste en resolver un bug y podemos verlos en el archivo [bugA
 
 ## Wimblecode
 
-Este problema lo tenemos resuelto en la carpeta wimblecode. Tenemos 2 archivos js y uno html donde se puede ver en el terminal del navegador el resultado de simular un torneo. El archivo [match.js](https://github.com/KeepCodingWeb15/intro-js-practica/blob/main/match.js) tiene la lógica de ganar un partido y métodos para mostrar el marcador.
+Hemos resuelto este problema en la carpeta "wimblecode". Encontrarás 2 archivos JS y un archivo HTML donde podrás visualizar en la terminal del navegador el resultado de la simulación de un torneo. El archivo [match.js](https://github.com/KeepCodingWeb15/intro-js-practica/blob/main/wimblecode/match.js) contiene la lógica para determinar el ganador de un partido y métodos para mostrar el marcador.
 
-Aparte de esto aunque no se pide añadí algunos archivos de tests para probar varios de los escenarios posibles que se pueden dar en esta competencia. Estos archivos de test pese a que no se dan en el módulo están creados con Jest y os animo a cuando vean el módulo de testing vuelvan a este repositorio para darles un vistazo.
+Además de esto, aunque no se haya solicitado, he añadido algunos archivos de prueba para probar varios de los posibles escenarios que podrían darse en esta competencia. Estos archivos de prueba, aunque no se incluyan en el módulo, están creados con Jest. Les animo a que, cuando lleguen al módulo de pruebas, regresen a este repositorio para echarles un vistazo.
+
+En caso de querrer ejecutar estos tests se pude hacer lo siguiente:
+
+1. Tener node instalado
+2. Ejecutar `npm install`
+3. Ejecutar `npm t`
