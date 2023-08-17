@@ -6,7 +6,7 @@ import { createMatch } from './match.js';
  * @param {string} jugador2 nombre jugador 2
  * @returns nombre del jugador ganador de un partido
  */
-const determinarGanador = (jugador1, jugador2) => {
+export const getWinner = (jugador1, jugador2) => {
   let winner = '';
   const game = createMatch(jugador1, jugador2);
   while (!winner) {
@@ -33,7 +33,7 @@ ${game.getCurrentRoundScore()}
  * Muestra por pantalla el desarrollo del torneo
  * @param {string[]} jugadores nombre de los jugadores
  */
-const crearPlayoff = (jugadores) => {
+export const crearPlayoff = (jugadores) => {
   if (jugadores.length !== 4) {
     console.log('El número de jugadores debe ser 8.');
     return;
@@ -49,7 +49,7 @@ const crearPlayoff = (jugadores) => {
     for (let i = 0; i < ganadores.length; i += 2) {
       const jugador1 = ganadores[i];
       const jugador2 = ganadores[i + 1];
-      const ganador = determinarGanador(jugador1, jugador2);
+      const ganador = getWinner(jugador1, jugador2);
 
       enfrentamientos.push(ganador);
       console.log(`${jugador1} vs ${jugador2} => Ganador: ${ganador}`);
@@ -61,7 +61,3 @@ const crearPlayoff = (jugadores) => {
 
   console.log(`Ganador final: ${ganadores[0]}`);
 }
-
-// // Ejemplo de uso
-// const jugadores = ['Alberto', 'David', 'Javier', 'Eduardo'];
-// crearPlayoff(jugadores);
