@@ -33,7 +33,7 @@ ${game.getCurrentRoundScore()}
  * Muestra por pantalla el desarrollo del torneo
  * @param {string[]} jugadores nombre de los jugadores
  */
-export const crearPlayoff = (jugadores) => {
+export const tournament = (jugadores) => {
   if (jugadores.length !== 4) {
     console.log('El número de jugadores debe ser 8.');
     return;
