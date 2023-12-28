@@ -1,25 +1,21 @@
 const miInformacion = {
   nombre: "Kevin",
   apellidos: "Martínez",
-  temasBootcamp: ["HTML & CSS", "Tema 2", "Tema 3"],
-  busquedaActiva: false,
-  redesSociales: [
+  modules: [
     {
-      nombre: "GitHub",
-      link: "https://github.com/kevinccbsg",
+      name: 'NodeJS',
+      date: '2023-02-01',
     },
     {
-      nombre: "LinkedIn",
-      link: "https://www.linkedin.com/in/kevinjmartinez/",
+      name: 'Git',
+      date: '2023-02-15',
+    },
+    {
+      name: 'React',
+      date: '2023-03-15',
     },
   ],
+  busquedaActiva: false,
 };
 
-console.log("Nombre:", miInformacion.nombre);
-console.log("Apellidos:", miInformacion.apellidos);
-console.log("Temas del bootcamp:", miInformacion.temasBootcamp);
-console.log("Búsqueda activa:", miInformacion.busquedaActiva);
-console.log("Redes sociales:");
-miInformacion.redesSociales.forEach((redSocial) => {
-  console.log(`${redSocial.nombre}: ${redSocial.link}`);
-});
+console.log("React inicio:", miInformacion.modules[2].date);

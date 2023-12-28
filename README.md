@@ -18,6 +18,10 @@ El ejercicio 3, se puede ver el resultado accediendo al html [transform.html](ht
 
 El ejercicio 4, consiste en resolver un bug y podemos verlos en el archivo [bugAsync.js](https://github.com/KeepCodingWeb15/intro-js-practica/blob/main/bugAsync.js) con 3 maneras de resolver el problema. Con Callback, promsesas y async/await.
 
+## Ejercicio 5 - Catálogo Musical
+
+El ejercicio 5, consiste en resolver un bug y podemos verlos en el archivo [bugAsync.js](https://github.com/KeepCodingWeb15/intro-js-practica/blob/main/bugAsync.js) con 3 maneras de resolver el problema. Con Callback, promsesas y async/await.
+
 ## Wimblecode
 
 Hemos resuelto este problema en la carpeta "wimblecode". Encontrarás 2 archivos JS y un archivo HTML donde podrás visualizar en la terminal del navegador el resultado de la simulación de un torneo. El archivo [match.js](https://github.com/KeepCodingWeb15/intro-js-practica/blob/main/wimblecode/match.js) contiene la lógica para determinar el ganador de un partido y métodos para mostrar el marcador.
