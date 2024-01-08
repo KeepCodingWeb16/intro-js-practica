@@ -28,7 +28,7 @@ Hemos resuelto este problema en la carpeta "wimblecode". Encontrarás 2 archivos
 
 ---
 
-Además de esto, aunque no se haya solicitado, he añadido algunos archivos de prueba para probar varios de los posibles escenarios que podrían darse en esta competencia. Estos archivos de prueba, aunque no se incluyan en el módulo, están creados con Jest. Les animo a que, cuando lleguen al módulo de pruebas, regresen a este repositorio para echarles un vistazo.
+Además de esto, aunque no se solicitó, he añadido algunos archivos de prueba para probar varios de los posibles escenarios que podrían darse en esta competencia. Estos archivos de prueba, aunque no se incluyan en el módulo, están creados con Jest. Les animo a que, cuando lleguen al módulo de pruebas, regresen a este repositorio para echarles un vistazo.
 
 En caso de querrer ejecutar estos tests se pude hacer lo siguiente:
 
